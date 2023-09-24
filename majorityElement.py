@@ -1,16 +1,14 @@
-class Solution:
-    def majorityelement(self: list[int]) -> int:
-
+def majorityElement(self: list[int]) -> int:
         output = 0
         numberCount = 0
-
+        countedNumbers = []
         for i in self:
-            if self.count(self[i]) > numberCount:
-                numberCount = self.count(self[i])
-                output = self[i]
+            if self.count(i) > numberCount and i not in countedNumbers:
+                numberCount = self.count(i)
+                output = i
+            else:
+                countedNumbers.append(i)
 
-        return output
+        print(countedNumbers)
 
-k = Solution.majorityelement([2,2,1,1,1,2,2])
-print(k)
-
+majorityElement([])
