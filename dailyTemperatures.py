@@ -3,21 +3,21 @@ class Solution:
 
         temperatures = self
         output = []
-        c, l, r = 0, 0, 0
+        center, left, right = 0, 0, 0
 
-        while c < len(temperatures):
-            if r == len(temperatures):
+        while center < len(temperatures):
+            if right == len(temperatures):
                 output.append(0)
-                l += 1
-                r = l
-                c += 1
-            elif temperatures[r] > temperatures[l]:
-                diff = r - l
+                left += 1
+                right = left
+                center += 1
+            elif temperatures[right] > temperatures[left]:
+                diff = right - left
                 output.append(diff)
-                l += 1
-                r = l
-                c += 1
+                left += 1
+                right = left
+                center += 1
             else:
-                r += 1
+                right += 1
 
         return output
