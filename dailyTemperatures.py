@@ -16,6 +16,7 @@ class Solution:
                 output.append(diff)
                 left += 1
                 right = left
+
                 center += 1
             else:
                 right += 1
